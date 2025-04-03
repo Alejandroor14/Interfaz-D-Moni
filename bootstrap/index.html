@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>D´MONI-POST</title>
+    <link rel="icon" type="image/x-icon" href="assets/logohtml.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        header.bg-dark.py-5 {
+            background-color: #c7300f95; /* Color de fondo, puedes cambiarlo */
+            background-image: url('assets/cafe_fondo.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        header.bg-dark.py-5 .text-white h1,
+        header.bg-dark.py-5 .text-white p {
+            color: black !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#!">D´MONI Cafetería</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">Acerca de</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tienda</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">Todos los productos</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="#!">Productos populares</a></li>
+                            <li><a class="dropdown-item" href="#!">Nuevos lanzamientos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark" type="button" id="carrito-boton" data-bs-toggle="modal" data-bs-target="#carritoModal">
+                        <i class="bi-cart-fill me-1"></i>
+                        Carrito
+                        <span class="badge bg-dark text-white ms-1 rounded-pill" id="carrito-contador">0</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">D´MONI</h1>
+                <p class="lead fw-normal text-white-50 mb-0">Cafetería</p>
+            </div>
+        </div>
+    </header>
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="assets/cafe_blanco.jpeg" alt="Café del día" />
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Café del día</h5>
+                                $40.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar-carrito" href="#" data-nombre="Café del día" data-precio="40.00" data-imagen="assets/cafe_blanco.jpeg">Agregar al carrito</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta</div>
+                        <img class="card-img-top" src="assets/frapuccino.webp" alt="Frappuccino" />
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Frappuccino</h5>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <span class="text-muted text-decoration-line-through">$100.00</span>
+                                $80.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar-carrito" href="#" data-nombre="Frappuccino" data-precio="80.00" data-imagen="assets/frapuccino.webp">Agregar al carrito</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta</div>
+                        <img class="card-img-top" src="assets/cafe_expreso.jpeg" alt="Café Espresso" />
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Café Espresso</h5>
+                                <span class="text-muted text-decoration-line-through">$60.00</span>
+                                $50.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar-carrito" href="#" data-nombre="Café Espresso" data-precio="50.00" data-imagen="assets/cafe_expreso.jpeg">Agregar al carrito</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="assets/cafe_americano.jpeg" alt="Café Americano" />
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Café Americano</h5>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                $60.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar-carrito" href="#" data-nombre="Café Americano" data-precio="60.00" data-imagen="assets/cafe_americano.jpeg">Agregar al carrito</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta</div>
+                        <img class="card-img-top" src="assets/CHOCOLATE.jpeg" alt="Chocolate" />
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Chocolate</h5>
+                                <span class="text-muted text-decoration-line-through">$80.00</span>
+                                $70.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar-carrito" href="#" data-nombre="Chocolate" data-precio="70.00" data-imagen="assets/CHOCOLATE.jpeg">Agregar al carrito</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="assets/pastel_cafe.jpg" alt="Pastel de cafe" />
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Pastel de cafe</h5>
+                                $70.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar-carrito" href="#" data-nombre="Pastel de cafe" data-precio="70.00" data-imagen="assets/pastel_cafe.jpg">Agregar al carrito</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta</div>
+                        <img class="card-img-top" src="assets/muffin.jpg" alt="Muffin" />
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Muffin</h5>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <span class="text-muted text-decoration-line-through">$60.00</span>
+                                $50.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar-carrito" href="#" data-nombre="Muffin" data-precio="50.00" data-imagen="assets/muffin.jpg">Agregar al carrito</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="assets/creepa.jpg" alt="Crepa" />
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">Crepa</h5>
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                $40.00
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar-carrito" href="#" data-nombre="Crepa" data-precio="40.00" data-imagen="assets/creepa.jpg">Agregar al carrito</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="py-5 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Cafetería D´MONI 2025</p></div>
+    </footer>
+
+    <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="carritoModalLabel">Tu Carrito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group mb-3" id="lista-carrito">
+                    </ul>
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span>Total</span>
+                        <strong id="total-carrito">$0.00</strong>
+                    </h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
+                    <button type="button" class="btn btn-primary">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const botonesAgregar = document.querySelectorAll('.agregar-carrito');
+            const carritoContador = document.getElementById('carrito-contador');
+            const listaCarrito = document.getElementById('lista-carrito');
+            const totalCarrito = document.getElementById('total-carrito');
+            let contador = 0;
+            let carrito = [];
+
+            botonesAgregar.forEach(boton => {
+                boton.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    contador++;
+                    carritoContador.textContent = contador;
+
+                    const nombreProducto = this.dataset.nombre;
+                    const precioProducto = parseFloat(this.dataset.precio);
+                    const imagenProducto = this.dataset.imagen; // Obtener la ruta de la imagen
+                    const productoEnCarrito = carrito.find(item => item.nombre === nombreProducto);
+
+                    if (productoEnCarrito) {
+                        productoEnCarrito.cantidad++;
+                    } else {
+                        carrito.push({ nombre: nombreProducto, precio: precioProducto, cantidad: 1, imagen: imagenProducto }); // Guardar la imagen en el carrito
+                    }
+
+                    actualizarModalCarrito();
+                });
+            });
+
+            function actualizarModalCarrito() {
+                listaCarrito.innerHTML = '';
+                let total = 0;
+
+                carrito.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'lh-sm', 'align-items-center'); // Añadir align-items-center
+
+                    const divImagenNombre = document.createElement('div');
+                    divImagenNombre.classList.add('d-flex', 'align-items-center');
+
+                    const imgCarrito = document.createElement('img');
+                    imgCarrito.src = item.imagen;
+                    imgCarrito.alt = item.nombre;
+                    imgCarrito.style.width = '50px'; // Ajusta el tamaño de la imagen como desees
+                    imgCarrito.style.height = 'auto';
+                    imgCarrito.style.marginRight = '10px';
+
+                    const divInfo = document.createElement('div');
+                    const h6Nombre = document.createElement('h6');
+                    h6Nombre.classList.add('my-0');
+                    h6Nombre.textContent = item.nombre;
+                    const smallCantidad = document.createElement('small');
+                    smallCantidad.classList.add('text-muted');
+                    smallCantidad.textContent = ` x ${item.cantidad}`;
+                    divInfo.appendChild(h6Nombre);
+                    divInfo.appendChild(smallCantidad);
+
+                    divImagenNombre.appendChild(imgCarrito);
+                    divImagenNombre.appendChild(divInfo);
+
+                    const spanPrecio = document.createElement('span');
+                    spanPrecio.classList.add('text-muted');
+                    spanPrecio.textContent = `$${(item.precio * item.cantidad).toFixed(2)}`;
+
+                    listItem.appendChild(divImagenNombre);
+                    listItem.appendChild(spanPrecio);
+                    listaCarrito.appendChild(listItem);
+
+                    total += item.precio * item.cantidad;
+                });
+
+                totalCarrito.textContent = `$${total.toFixed(2)}`;
+            }
+        });
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
